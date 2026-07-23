@@ -1,8 +1,28 @@
 aid: august-home
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/august-home.png
 name: August Home
-description: 'August Home is a company surfaced as a portfolio company of cowboy-ventures and added to
-  the API Evangelist network as a stub for enrichment. Sector: consumer. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: >-
+  August Home is a consumer smart-home and access-control brand best known for its
+  retrofit August Smart Lock, Smart Lock Pro, Wi-Fi Smart Lock, Smart Keypad, Doorbell
+  Cam, and the August Connect Wi-Fi Bridge. Founded in San Francisco and acquired by
+  ASSA ABLOY, August products are now sold and supported alongside the Yale Home brand
+  and operated through the shared Yale Access mobile app. August does not publish a
+  public developer API or developer portal; programmatic access to August locks is
+  reached through the private mobile/app API or via third-party universal-access
+  platforms such as Seam, and integrations exist with Google Home, Amazon Alexa, Apple
+  HomeKit, Airbnb, and Yale. This profile was surfaced as a portfolio company of Cowboy
+  Ventures and enriched from public sources.
 url: https://raw.githubusercontent.com/api-evangelist/august-home/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,10 +32,18 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
 - Consumer
+- Smart Home
+- Smart Lock
+- Access Control
+- Home Security
+- IoT
+- Consumer Electronics
+- Yale
+- ASSA ABLOY
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -23,5 +51,20 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/august-home-domain-security.yml
 - type: Website
   url: https://august.com
+- type: Support
+  url: https://support.yalehome.com
+- type: TermsOfService
+  url: https://august.com/pages/terms-of-service
+- type: PrivacyPolicy
+  url: https://august.com/pages/privacy-policy
+- type: WellKnown
+  url: well-known/august-home-well-known.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
