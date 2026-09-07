@@ -2,22 +2,27 @@ generated: '2026-07-18'
 method: searched
 source: live probe of https://august.com/.well-known/*
 host: https://august.com
-note: >-
-  august.com is served on Shopify; the OIDC / OAuth authorization-server
-  discovery documents present at the well-known paths are Shopify's
-  customer-account authentication metadata (issuer https://shopify.com/authentication/13547835),
-  not an August-operated identity provider. Captured verbatim as the real
-  documents the host returns. No security.txt, api-catalog, or ai-plugin.json is published.
-documents:
-- path: /.well-known/openid-configuration
-  status: 200
-  file: august-home-openid-configuration.json
-- path: /.well-known/oauth-authorization-server
-  status: 200
-  file: august-home-oauth-authorization-server.json
-- path: /.well-known/security.txt
-  status: 404
-- path: /.well-known/api-catalog
-  status: 404
-- path: /.well-known/ai-plugin.json
-  status: 404
+note: august.com is served on Shopify; the OIDC / OAuth authorization-server discovery documents present
+  at the well-known paths are Shopify's customer-account authentication metadata (issuer https://shopify.com/authentication/13547835),
+  not an August-operated identity provider. Captured verbatim as the real documents the host returns.
+  No security.txt, api-catalog, or ai-plugin.json is published.
+hosts:
+- host: https://august.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: august-home-openid-configuration.json
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: august-home-oauth-authorization-server.json
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+x-shape-fix:
+  converted: '2026-08-20'
+  from: documents
+  note: Rewritten into hosts[] -> documents[], the only shape well_known_docs() in score.rb reads. A served
+    .well-known surface recorded in any other shape scores as absent.
